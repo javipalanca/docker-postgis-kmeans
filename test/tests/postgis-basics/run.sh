@@ -13,7 +13,7 @@ trap "docker rm -vf $cid > /dev/null" EXIT
 
 psql() {
 	docker run --rm -i \
-		--link "$cname":postgis \
+		--link "$cname":postgis-kmeans \
 		--entrypoint psql \
 		-e PGPASSWORD="$POSTGRES_PASSWORD" \
 		"$image" \
